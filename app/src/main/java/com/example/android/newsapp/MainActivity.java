@@ -31,8 +31,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 News news = mAdapter.getItem(position);
-                assert news != null;
-                String url = news.getmURL();
+                String url = null;
+                if (news != null) {
+                    url = news.getmURL();
+                }
                 Intent i = new Intent(Intent.ACTION_VIEW);
 
                 if (i.resolveActivity(getPackageManager()) != null) {
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int id, Bundle args) {
-        return new NewsLoad(this);
+        return new NewsLoader(this);
     }
 
     @Override

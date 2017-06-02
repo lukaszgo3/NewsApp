@@ -31,11 +31,18 @@ class NewsAdapter extends ArrayAdapter<News> {
         TextView author = (TextView) convertView.findViewById(R.id.authorID);
         TextView category = (TextView) convertView.findViewById(R.id.categoryID);
 
-        assert news != null;
-        title.setText(news.getmTitle());
-        date.setText(news.getmDate());
-        author.setText(news.getmAuthor());
-        category.setText(news.getmCategory());
+        if (news != null) {
+            title.setText(news.getmTitle());
+        }
+        if (news != null) {
+            date.setText(news.getmDate());
+        }
+        if (news != null) {
+            author.setText(news.getmAuthor());
+        }
+        if (news != null) {
+            category.setText(news.getmCategory());
+        }
 
         return convertView;
     }

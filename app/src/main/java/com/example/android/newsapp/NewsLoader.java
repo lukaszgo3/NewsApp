@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-class NewsLoad extends AsyncTaskLoader<List<News>> {
+class NewsLoader extends AsyncTaskLoader<List<News>> {
 
-    private String LOG_TAG = NewsLoad.class.getName();
+    private String LOG_TAG = NewsLoader.class.getName();
 
-    NewsLoad(Context context) {
+    NewsLoader(Context context) {
         super(context);
     }
 
@@ -27,7 +27,7 @@ class NewsLoad extends AsyncTaskLoader<List<News>> {
             newses = NewsQuery.fromJson(json);
 
         } catch (IOException e) {
-            Log.e(LOG_TAG, "NewsLoad Error: ", e);
+            Log.e(LOG_TAG, "NewsLoader Error: ", e);
         }
         return newses;
     }
