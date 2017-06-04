@@ -86,6 +86,7 @@ class NewsQuery {
                 json = readFromStream(stream);
             } else {
                 Log.e("MainActivity", "Error response: " + httpURLConnection.getResponseCode());
+
             }
 
         } catch (IOException e) {
